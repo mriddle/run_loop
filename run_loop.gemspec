@@ -44,6 +44,7 @@ tools like instruments and simctl.}
   s.executables = 'run-loop'
 
   s.required_ruby_version = '>= 2.0'
+  s.extensions = "ext/mkrf_conf.rb"
 
   s.add_dependency('json', '~> 1.8')
   s.add_dependency('awesome_print', '~> 1.2')
@@ -52,10 +53,6 @@ tools like instruments and simctl.}
   s.add_dependency('command_runner_ng', '>= 0.0.2')
   s.add_dependency("httpclient", "~> 2.6")
   s.add_dependency("i18n", ">= 0.7.0", "< 1.0")
-
-  if RUBY_PLATFORM[/darwin/]
-    s.add_dependency("dnssd", "2.0")
-  end
 
   s.add_development_dependency("rspec_junit_formatter", "~> 0.2")
   s.add_development_dependency("luffa", "~> 2.0")
