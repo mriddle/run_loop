@@ -65,6 +65,14 @@ module RunLoop
           "CLOBBER" => "1"
         }
 
+        if device.physical_device?
+          identity = RunLoop::Environment.code_sign_identity
+          if !identity
+            identity = "iPhone Developer"
+          end
+          env["CODE_SIGN_IDENTITY"] = identity
+        end
+
         args = [
           "xcrun",
           "xcodebuild",
